@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url(../images/accountsBackground.jpg) no-repeat center center fixed;
+    background-size: cover;
+    /* Add mobile optimization for background */
+    background-attachment: scroll; /* Fixes iOS background rendering issues */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px; /* Added mobile padding */
+}
+
+/* Responsive form container */
+.signup-content {
+    width: 100%;
+    max-width: 800px; /* Prevents form from being too wide on large screens */
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(15px);
+    color: #fff;
+    border-radius: 10px;
+    padding: 25px; /* Reduced for mobile */
+    gap: 25px; /* Consistent spacing */
+}
+
+
+@media (min-width: 768px) {
+    .signup-content {
+        flex-direction: row;
+        padding: 30px 50px;
+        gap: 40px;
+        
+    }
+
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form h1 {
+    font-size: 28px; 
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.input-box {
+    width: 100%;
+    height: 50px;
+    margin: 15px 0; 
+    font-size: 18px; 
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    outline: none;
+    font-size: 16px;
+    padding: 0 45px 0 20px; 
+    color: #fff;
+    
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+    opacity: 0.8;
+}
+
+form .button-submit {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px; 
+}
+
+form .button-submit:hover {
+    background: #f1f1f1;
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(255, 255, 255, 0.6),
+        0 0 60px rgba(255, 255, 255, 0.4);
+    transform: scale(1.02); 
+}
+
+form .another-option {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 15px 0 10px; 
+}
+
+.another-option a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.another-option a:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+
+.logo-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: invert(100%) brightness(90%);
+    text-align: center;
+   
+}
+.logo-content a{
+    text-decoration: none;
+    text-align: center;
+}
+.logo {
+    width: 80px; 
+    height: auto;
+    margin: 0 auto;
+    
+}
+
+#logoText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+}
+
+#logoText .logo {
+    /* Remove conflicting width constraint */
+    width: auto !important;
+    /* Ensure proper text centering */
+    text-align: center;
+    /* Maintain your existing styles */
+    font-size: 28px;
+    font-weight: 900;
+    color: #000;
+    /* Add line-height for vertical centering */
+    line-height: 1.2;
+}
+
+/* Keep your existing divider and tagline styles */
+.divider {
+    width: 150px;
+    height: 2px;
+    background: #000;
+    margin: 5px auto;
+}
+
+.tagline {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #222;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
+
+/* Responsive divider line */
+.line {
+    height: 2px; /* Horizontal on mobile */
+    width: 100%;
+    max-width: 300px;
+    background-color: #f1f1f1;
+    margin: 20px auto;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .line {
+        height: auto; /* Vertical on desktop */
+        width: 2px;
+        max-height: 600px;
+        margin: 0 30px;
+        display: block;
+    }
+    
+    /* Only show divider when both sections exist */
+    .signup-content > .line {
+        display: block;
+    }
+}
+
+/* Hide unnecessary elements on mobile */
+@media (max-width: 767px) {
+    .signup-content > .line {
+        display: none;
+    }
+    
+    .tagline {
+        display: none; /* Hide tagline on small screens */
+    }
+    
+}
